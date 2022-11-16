@@ -17,9 +17,5 @@ jobs:
         with:
           config: ./test/e2e/kind-cluster.yml
           cluster_name: kind-workflow-playground-test
-      - name: Deploy
-        run: |
-          kubectl create ns e2e-test
-          kubectl -n e2e-test apply -f ./test/e2e/e2e.yml
       - name: Test
         run: make test
